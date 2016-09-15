@@ -6,17 +6,25 @@
         <th class="text-center">current value</th>
         <th class="text-center">new value</th>
       </tr>
-      <tr ng-repeat="(key, value) in user">
-        <td>{{key}}</td>
-        <td>{{value}}</td>
-        <td class="col-lg-4"><input class="form-control text-center" type="{{key}}" name="{{key}}" value="{{value}}"></td>
+      <tr>
+        <td>name</td>
+        <td>{{user.name}}</td>
+        <td class="col-lg-4"><input class="form-control text-center" type="text" name="name" value="{{user.name}}"></td>
+      </tr>
+      <tr>
+        <td>email</td>
+        <td>{{user.email}}</td>
+        <td class="col-lg-4"><input class="form-control text-center" type="email" name="email" value="{{user.email}}"></td>
+      </tr>
+      <tr>
+        <td>password</td>
+        <td>{{user.password}}</td>
+        <td class="col-lg-4"><input class="form-control text-center" type="password" name="password" value="{{user.password}}"></td>
       </tr>
       <tr>
         <td colspan="3"><button class="col-lg-12 btn btn-primary" type="">Update</button></td>
       </tr>
     </table>    
   </div>
-  
-  {{user}}
 
 </div>
