@@ -8,10 +8,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 
   $routeProvider.
     when('/users', {
-      templateUrl: 'users.template.html'
+      templateUrl: 'user-list/users.template.html'
     }).
     when('/users/:userId', {
-      templateUrl: 'user.template.html'
+      templateUrl: 'user/user.template.html'
     }).
     otherwise({
       redirectTo: '/users'
