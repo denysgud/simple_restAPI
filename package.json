@@ -2,7 +2,7 @@
   "name": "simple_restAPI",
   "version": "0.0.1",
   "description": "RESTful CRUD with NodeJS and MongoDB",
-  "main": "server.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/denysgud/simple_restAPI/issues"
   },
-  "homepage": "https://github.com/denysgud/simple_restAPI#readme"
+  "homepage": "https://github.com/denysgud/simple_restAPI#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
