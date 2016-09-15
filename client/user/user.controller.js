@@ -1,12 +1,12 @@
-angular.module('users').controller('UserController', ['$scope', '$routeParams', '$location', 'User', '$http',
-  function($scope, $routeParams, $location, User, $http) {
+angular.module('users').controller('UserController', ['$scope', '$routeParams', '$location', 'User',
+  function($scope, $routeParams, $location, User) {
     $scope.user = User.get({userId: $routeParams.userId});
     $scope.newUser = $scope.user;
 
     $scope.updateUser = function(user) {
-      $http.put('users/' + user._id, $scope.newUser).then(function () {
+      User.update({ id:$scope.user._id }, user, function() {
         $location.path('users');
       });
-    };
+    }
   }
 ]);

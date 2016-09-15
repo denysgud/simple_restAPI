@@ -18,38 +18,19 @@ angular.module('users').controller('UsersController', ['$scope', '$routeParams',
       });
     };
 
-    $scope.find = function() {
+    $scope.findUsers = function() {
       $scope.users = User.query();
     };
 
-    $scope.findOne = function() {
+    $scope.findOneUser = function() {
       $scope.user = User.get({
         userId: $routeParams.userId
       });
     };
 
     $scope.deleteUser = function(user) {
-      $http.delete('users/' + user._id).success(function() {
-        for (var i in $scope.users) {
-          if ($scope.users[i]._id === user._id) {
-            $scope.users.splice(i, 1);
-            console.log($scope.users);
-          }
-        }
-      });
-      /*User.delete({
-        userId: user._id
-      }, function() {
-        for (var i in $scope.users) {
-          if ($scope.users[i].id === user._id) {
-            $scope.users.splice(i, 1);
-          }
-        }
-      });*/
-      /*if (user) {
-      console.log(user);
+      if (user) {
         user.$remove(function() {
-        console.log('deleted');
           for (var i in $scope.users) {
             if ($scope.users[i] === user) {
               $scope.users.splice(i, 1);
@@ -57,10 +38,11 @@ angular.module('users').controller('UsersController', ['$scope', '$routeParams',
           }
         });
       } else {
-        $scope.user.$remove(function() {
+        $scope.users.$remove(function() {
           $location.path('users');
         });
-      }*/
+      }
     };
+
   }
 ]);
