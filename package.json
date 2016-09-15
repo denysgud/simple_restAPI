@@ -19,6 +19,7 @@
   "homepage": "https://github.com/denysgud/simple_restAPI#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "bower": "^1.7.9",
     "express": "^4.14.0",
     "mongoose": "^4.6.0",
     "morgan": "^1.7.0"

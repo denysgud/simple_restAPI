@@ -1,6 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var path = require('path');
 
 module.exports = function() {
   var app = express();
@@ -12,7 +13,9 @@ module.exports = function() {
   }));
   app.use(bodyParser.json());
 
-  require('../routes/index.js')(app);
+  //app.set('views', path.join(__dirname, '../../client'));
+  app.use(express.static(path.join(__dirname, '/../../client')));
+
   require('../routes/users.js')(app);
   return app;
 };
