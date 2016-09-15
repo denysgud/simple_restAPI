@@ -1,0 +1,19 @@
+<div class="container" ng-controller="UsersController">
+  <table class="table table-hover">
+    <tr class="text-center">
+      <th>#</th>
+      <th>name</th>
+      <th>email</th>
+      <th>password</th>
+      <th colspan="2" class="text-center">Options</th>
+    </tr>
+    <tr ng-repeat="user in users">
+      <td>{{$index + 1}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.password}}</td>
+      <td class="text-center"><a ng-href="#!/users/{{user._id}}">edit</a></td>
+      <td class="text-center"><a href="">delete</a></td>
+    </tr>
+  </table>
+</div>
