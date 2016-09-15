@@ -13,5 +13,6 @@ module.exports = function() {
   app.use(bodyParser.json());
 
   require('../routes/index.js')(app);
+  require('../routes/users.js')(app);
   return app;
 };
