@@ -6,8 +6,8 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
   $locationProvider.hashPrefix('!');
 
   $routeProvider.
-    when('/index', {
-      templateUrl: 'index.html'
+    when('/', {
+      templateUrl: 'example.html'
     }).
     otherwise({
       redirectTo: '/'
