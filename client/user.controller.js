@@ -1,44 +1,13 @@
-angular.module('users').controller('UserController', ['$scope', '$routeParams', '$location', 'User',
-  function($scope, $routeParams, $location, User) {
+angular.module('users').controller('UserController', ['$scope', '$routeParams', '$location', 'User', '$http',
+  function($scope, $routeParams, $location, User, $http) {
     $scope.user = User.get({userId: $routeParams.userId});
+    $scope.newUser = $scope.user;
 
-    /*$scope.create = function() {
-      var user = new User({
-        name: this.name,
-        email: this.email,
-        password: this.password
-      });
-      user.$save(function(response) {
-        $location.path('users/' + response._id);
-      }, function(errorResponse) {
-        $scope.error = errorResponse.data.message;
+    $scope.updateUser = function(user) {
+      console.log($scope.newUser);
+      $http.put('users/' + user._id, $scope.newUser).then(function () {
+        console.log('updated');
       });
     };
-
-    $scope.find = function() {
-      $scope.users = User.query();
-    };
-
-    $scope.findOne = function() {
-      $scope.user = User.get({
-        userId: $routeParams.userId
-      });
-    };
-
-    $scope.delete = function(user) {
-      if (user) {
-        user.$remove(function() {
-          for (var i in $scope.users) {
-            if ($scope.users[i] === user) {
-              $scope.users.splice(i, 1);
-            }
-          }
-        });
-      } else {
-        $scope.user.$remove(function() {
-          $location.path('users');
-        });
-      }
-    };*/
   }
 ]);
